@@ -19,3 +19,12 @@ to either:
 
 * manually redeploy (see above)
 * manually set the `SITE_URL` environment variable in the render dashboard to point to your custom domain `https://mycustom.com`
+
+## Need to add an IP address to your warehouse
+
+## IP addresses for datawarehouse access
+
+Your data warehouse may require you to add an IP address for your Lightdsah instance to access the warehouse.
+
+
+For instructions to get the IP address follow this guide: https://render.com/docs/static-outbound-ip-addresses
