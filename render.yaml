@@ -1,0 +1,39 @@
+previewsEnabled: false
+
+databases:
+  - name: lightdash-database
+    ipAllowList: []
+
+services:
+  - type: web
+    env: docker
+    name: lightdash-server
+    dockerContext: .
+    dockerfilePath: dockerfile
+    envVars: 
+      - key: PGHOST
+        fromDatabase:
+          name: lightdash-database
+          property: host
+      - key: PGPORT
+        fromDatabase:
+          name: lightdash-database
+          property: port
+      - key: PGDATABASE
+        fromDatabase:
+          name: lightdash-database
+          property: database
+      - key: PGUSER
+        fromDatabase:
+          name: lightdash-database
+          property: user
+      - key: PGPASSWORD
+        fromDatabase:
+          name: lightdash-database
+          property: password
+      - key: TRUST_PROXY
+        value: true
+      - key: SECURE_COOKIES
+        value: true
+      - key: LIGHTDASH_SECRET
+        generateValue: true
