@@ -3,9 +3,11 @@ previewsEnabled: false
 databases:
   - name: lightdash-database
     ipAllowList: []
+    plan: free
 
 services:
   - type: web
+    plan: free
     env: docker
     name: lightdash-server
     dockerContext: .
